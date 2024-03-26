@@ -58,14 +58,14 @@ func TestWithStoppingWebServerBeforeHttpGet5sec(t *testing.T) {
 				err = second(io.Copy(file, resp.Body))
 				checkError(err)
 				break
-			} else if j < 5 && i < 12 {
+			} else if j < 6 && i < 12 {
 				time.Sleep(5 * time.Second)
 				writeFile(logFile, "5 sec")
 				if flag {
 					runCommand("sudo systemctl start nginx")
 					flag = false
 				}
-			} else if j < 5 && i >= 12 {
+			} else if j < 6 && i >= 12 {
 				time.Sleep(1 * time.Minute)
 				writeFile(logFile, "1 min")
 
@@ -130,10 +130,10 @@ func TestWithStoppingWebServerBeforeHttpGet1min(t *testing.T) {
 				err = second(io.Copy(file, resp.Body))
 				checkError(err)
 				break
-			} else if j < 5 && i < 12 {
+			} else if j < 6 && i < 12 {
 				time.Sleep(5 * time.Second)
 				writeFile(logFile, "5 sec")
-			} else if j < 5 && i >= 12 {
+			} else if j < 6 && i >= 12 {
 				time.Sleep(1 * time.Minute)
 				writeFile(logFile, "1 min")
 				if flag {
@@ -202,10 +202,10 @@ func TestWithStoppingWebServerBeforeHttpGet10min(t *testing.T) {
 				err = second(io.Copy(file, resp.Body))
 				checkError(err)
 				break
-			} else if j < 5 && i < 12 {
+			} else if j < 6 && i < 12 {
 				time.Sleep(5 * time.Second)
 				writeFile(logFile, "5 sec")
-			} else if j < 5 && i >= 12 {
+			} else if j < 6 && i >= 12 {
 				time.Sleep(1 * time.Minute)
 				writeFile(logFile, "1 min")
 

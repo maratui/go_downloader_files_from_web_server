@@ -70,9 +70,9 @@ func putFile(fileUrl string, file *os.File) error {
 			err = second(io.Copy(file, resp.Body))
 			checkError(err)
 			break
-		} else if j < 5 && i < 12 {
+		} else if j < 6 && i < 12 {
 			time.Sleep(5 * time.Second)
-		} else if j < 5 && i >= 12 {
+		} else if j < 6 && i >= 12 {
 			time.Sleep(1 * time.Minute)
 
 			i = 0
